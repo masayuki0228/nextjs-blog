@@ -6,7 +6,17 @@ import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps, NextPage } from "next";
 
-const Home: NextPage<{ allPostsData: any }> = ({ allPostsData }) => {
+type Post = {
+  id: string;
+  date: string;
+  title: string;
+};
+
+type Props = {
+  allPostsData: Post[];
+};
+
+const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <Head>
