@@ -6,7 +6,7 @@ import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps, NextPage } from "next";
 
-type Post = {
+export type Post = {
   id: string;
   date: string;
   title: string;
@@ -53,7 +53,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const allPostsData = getSortedPostsData();
   return {
     props: {
