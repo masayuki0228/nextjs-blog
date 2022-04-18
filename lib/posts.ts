@@ -7,7 +7,7 @@ import { Post } from "../types/post";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export function getSortedPostsData(): Post[] {
+export function getSortedPostsData(): Omit<Post, "contentHtml">[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {

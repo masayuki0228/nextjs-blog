@@ -8,7 +8,7 @@ import { GetStaticProps, NextPage } from "next";
 import { Post } from "../types/post";
 
 type Props = {
-  allPostsData: Post[];
+  allPostsData: Omit<Post, "contentHtml">[];
 };
 
 const Home: NextPage<Props> = ({ allPostsData }) => {
